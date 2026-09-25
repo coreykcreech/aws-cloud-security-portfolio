@@ -1,0 +1,26 @@
+#cloud-config
+# Sanitized example — SSH key and hostname are placeholders.
+# Applied via `qm set <vmid> --cicustom "user=local:snippets/<this-file>"`
+# to an Ubuntu 24.04 cloud image on Proxmox VE.
+
+hostname: example-host
+users:
+  - name: exampleuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAA...your-public-key-here example@host
+
+package_update: true
+package_upgrade: true
+packages:
+  - qemu-guest-agent
+  - git
+  - curl
+  - unzip
+  - ca-certificates
+
+runcmd:
+  - systemctl enable --now qemu-guest-agent

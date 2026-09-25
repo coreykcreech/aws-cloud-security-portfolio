@@ -18,6 +18,8 @@ CompTIA Security+ and Cloud+ certified. Currently pursuing an AS in Network Syst
 | 4 | Wazuh SIEM on EC2 | Planned | Wazuh, EC2, CloudTrail |
 | 5 | CIS AWS Foundations Benchmark Audit | Planned | Prowler |
 
+See [docs/build-environment.md](./docs/build-environment.md) for how the local Terraform/AWS CLI environment itself is provisioned.
+
 ## Contact
 
 Corey Creech — [LinkedIn](#) · [Email](mailto:corey.k.creech@gmail.com)
